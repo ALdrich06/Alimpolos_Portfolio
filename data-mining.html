@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mining - Aldrich A. Alimpolos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --purple-50: #faf5ff;
+            --purple-100: #f3e8ff;
+            --purple-200: #e9d5ff;
+            --purple-300: #d8b4fe;
+            --purple-400: #c084fc;
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            --purple-700: #7e22ce;
+            --purple-800: #6b21a8;
+            --purple-900: #581c87;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .output-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid var(--purple-500);
+        }
+        
+        .output-card:hover {
+            transform: translateX(8px);
+            border-left-color: var(--purple-700);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+        
+        .back-button {
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <a href="index.html#subjects" class="back-button inline-flex items-center text-white mb-6 hover:text-purple-200 transition-all duration-300">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Subjects
+            </a>
+            <div class="text-center">
+                <i class="fas fa-database text-7xl mb-4"></i>
+                <h1 class="text-5xl font-bold mb-2">Data Mining</h1>
+                <p class="text-xl opacity-90">All Outputs & Projects</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Final Project Section -->
+        <section class="mb-12">
+            <div class="flex items-center gap-4 mb-8 pb-4 border-b-4 border-purple-300">
+                <i class="fas fa-mobile-alt text-5xl text-purple-600"></i>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800">BananaGuard - Banana Disease Detection App</h2>
+                    <p class="text-gray-600 mt-1">AI-powered mobile application for detecting banana plant diseases</p>
+                </div>
+            </div>
+            <div class="space-y-6">
+            <!-- BananaGuard Project -->
+            <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">BananaGuard Final Project</h3>
+                        <span class="text-sm text-purple-600 font-medium">2nd Semester 2025-26</span>
+                    </div>
+                    <i class="fas fa-leaf text-4xl text-purple-500"></i>
+                </div>
+                <p class="text-gray-600 mb-3 text-sm">
+                    Mobile application using machine learning to detect banana plant diseases. Built with Flutter and TensorFlow, 
+                    featuring real-time image classification and disease identification for Filipino farmers.
+                </p>
+                
+                <!-- Presentation Video -->
+                <div class="mb-4 rounded-lg overflow-hidden border-2 border-purple-200 aspect-video">
+                    <video loop controls class="w-full h-full object-cover" poster="">
+                        <source src="videos/bananaguard-presentation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <!-- Screenshots Gallery -->
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">App Screenshots</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <!-- Correct order: 8,9,10,11,1,2,3,4,5,6,7 -->
+                        <img src="images/datamining/screenshot8.jpg" alt="Welcome to BananaGuard" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot8.jpg', '_blank')">
+                        <img src="images/datamining/screenshot9.jpg" alt="Scan & Detect" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot9.jpg', '_blank')">
+                        <img src="images/datamining/screenshot10.jpg" alt="Expert Treatment" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot10.jpg', '_blank')">
+                        <img src="images/datamining/screenshot11.jpg" alt="BananaGuard Splash" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot11.jpg', '_blank')">
+                        <img src="images/datamining/screenshot1.jpg" alt="Welcome/Login" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot1.jpg', '_blank')">
+                        <img src="images/datamining/screenshot2.jpg" alt="Scan Banana Leaf" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot2.jpg', '_blank')">
+                        <img src="images/datamining/screenshot3.jpg" alt="Disease List" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot3.jpg', '_blank')">
+                        <img src="images/datamining/screenshot4.jpg" alt="Camera/Analyzing" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot4.jpg', '_blank')">
+                        <img src="images/datamining/screenshot5.jpg" alt="Confidence Level" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot5.jpg', '_blank')">
+                        <img src="images/datamining/screenshot6.jpg" alt="Disease Details" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot6.jpg', '_blank')">
+                        <img src="images/datamining/screenshot7.jpg" alt="Care Tips" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/datamining/screenshot7.jpg', '_blank')">
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Flutter</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">TensorFlow</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Machine Learning</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Image Classification</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Mobile App</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-3">
+                    <a href="downloads/BananaGuard.apk" download class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg hover:from-green-700 hover:to-teal-700 shadow-lg transition-all hover:scale-105">
+                        <i class="fas fa-download mr-2"></i>
+                        Download APK
+                    </a>
+                    <a href="https://github.com/ALdrich06/BananaGuard" target="_blank" class="inline-flex items-center px-6 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-800 shadow-lg transition-all hover:scale-105">
+                        <i class="fab fa-github mr-2"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Previous Activities Section -->
+        <section class="mb-12">
+            <div class="flex items-center gap-4 mb-8 pb-4 border-b-4 border-purple-300">
+                <i class="fas fa-folder-open text-5xl text-purple-600"></i>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800">Previous Activities & Outputs</h2>
+                    <p class="text-gray-600 mt-1">Data mining exercises and learning activities</p>
+                </div>
+            </div>
+            
+            <!-- Important Note -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r-lg">
+                <div class="flex items-start">
+                    <i class="fas fa-exclamation-triangle text-yellow-600 text-2xl mr-3 mt-1"></i>
+                    <div>
+                        <h4 class="text-lg font-bold text-yellow-800 mb-1">Important Note</h4>
+                        <p class="text-yellow-700 text-sm">
+                            Please use your <strong>DNSC Google account</strong> to access these Google Drive folders. 
+                            Access may be restricted to authorized DNSC accounts only.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Activity 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Activity 1</h3>
+                            <span class="text-sm text-purple-600 font-medium">Data Mining Exercises</span>
+                        </div>
+                        <i class="fas fa-file-alt text-3xl text-purple-500"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Data mining exercises and learning materials.
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/17t-wGeImSR3yX_13iavR9lgYGLtTSn5p?usp=drive_link" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fab fa-google-drive mr-2"></i>
+                        View on Google Drive
+                    </a>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Activity 2</h3>
+                            <span class="text-sm text-purple-600 font-medium">Data Mining Exercises</span>
+                        </div>
+                        <i class="fas fa-file-alt text-3xl text-purple-500"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Data mining exercises and learning materials.
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/10lHV9Mm69etVjqllAD1NEKgTtcwZI3LE?usp=drive_link" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fab fa-google-drive mr-2"></i>
+                        View on Google Drive
+                    </a>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Activity 3</h3>
+                            <span class="text-sm text-purple-600 font-medium">Data Mining Exercises</span>
+                        </div>
+                        <i class="fas fa-file-alt text-3xl text-purple-500"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Data mining exercises and learning materials.
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/19Qk3ZPnpaplwXitKtZvoUL1XA_OB1Odz?usp=drive_link" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fab fa-google-drive mr-2"></i>
+                        View on Google Drive
+                    </a>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Activity 4</h3>
+                            <span class="text-sm text-purple-600 font-medium">Data Mining Exercises</span>
+                        </div>
+                        <i class="fas fa-file-alt text-3xl text-purple-500"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Data mining exercises and learning materials.
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/1Mmm8yX4PLfFMN6sgFujcPBo5YtKDNheJ?usp=drive_link" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fab fa-google-drive mr-2"></i>
+                        View on Google Drive
+                    </a>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Activity 5</h3>
+                            <span class="text-sm text-purple-600 font-medium">Data Mining Exercises</span>
+                        </div>
+                        <i class="fas fa-file-alt text-3xl text-purple-500"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Data mining exercises and learning materials.
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/12fWaOLPW2qLBnsYCQXpDQPDCq6F3dMp5?usp=drive_link" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fab fa-google-drive mr-2"></i>
+                        View on Google Drive
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12 px-4 mt-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Aldrich A. Alimpolos</h3>
+                    <p class="text-sm opacity-90 mb-2">BSIT 3D Student</p>
+                    <p class="text-sm opacity-90">Institute of Computing</p>
+                    <p class="text-sm opacity-90">Mindanao State University</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-home mr-2"></i>Home</a></li>
+                        <li><a href="cyber-security.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-shield-alt mr-2"></i>Cyber Security</a></li>
+                        <li><a href="hci-techno.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-laptop-code mr-2"></i>HCI & Techno</a></li>
+                        <li><a href="capstone.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-project-diagram mr-2"></i>Capstone</a></li>
+                        <li><a href="social-issues.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-balance-scale mr-2"></i>Social Issues</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/ALdrich06" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://web.facebook.com/profile.php?id=61588804875429" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aldricharanez/" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm opacity-80">&copy; 2026 Aldrich A. Alimpolos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for auto-play videos when in viewport
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('video');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    
+                    if (entry.isIntersecting) {
+                        video.play().catch(err => {
+                            console.log('Autoplay prevented:', err);
+                        });
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, observerOptions);
+            
+            videos.forEach(video => {
+                observer.observe(video);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aldrich A. Alimpolos - BSIT 3D Student Portfolio showcasing academic outputs and projects">
+    <title>Aldrich A. Alimpolos | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --primary-light: #a78bfa;
+            --secondary: #ec4899;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --purple-50: #faf5ff;
+            --purple-100: #f3e8ff;
+            --purple-200: #e9d5ff;
+            --purple-300: #d8b4fe;
+            --purple-400: #c084fc;
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            --purple-700: #7e22ce;
+            --purple-800: #6b21a8;
+            --purple-900: #581c87;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            color: #e2e8f0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {
+            .hero-bg {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            
+            .profile-container {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .subject-card {
+                min-height: 200px;
+            }
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Hero Background with Mesh Gradient */
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 20s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+            animation: meshMove 15s ease infinite;
+        }
+        
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes meshMove {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        /* Profile Section */
+        .profile-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(139, 92, 246, 0.5);
+            box-shadow: 
+                0 0 0 8px rgba(139, 92, 246, 0.1),
+                0 20px 60px rgba(139, 92, 246, 0.4),
+                inset 0 0 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 
+                0 0 0 12px rgba(139, 92, 246, 0.2),
+                0 30px 80px rgba(139, 92, 246, 0.6),
+                inset 0 0 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(236, 72, 153, 0.8);
+        }
+        
+        .profile-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--primary);
+            border-right-color: var(--secondary);
+            animation: rotate 3s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Subject Cards with 3D Effect */
+        .subject-card-wrapper {
+            perspective: 1000px;
+            transition: all 0.3s ease;
+        }
+        
+        .subject-card {
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .subject-card-wrapper:hover .subject-card {
+            transform: translateY(-16px) rotateX(5deg);
+            box-shadow: 
+                0 30px 60px -12px rgba(139, 92, 246, 0.5),
+                0 18px 36px -18px rgba(0, 0, 0, 0.3),
+                inset 0 -2px 6px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .subject-card-wrapper:hover .subject-card::before {
+            opacity: 1;
+        }
+        
+        .card-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .subject-card-wrapper:hover .card-shine {
+            left: 100%;
+        }
+        
+        .subject-card-bg {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.9) 0%, rgba(124, 58, 237, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .subject-card-bg::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+            animation: floatBubbles 20s ease-in-out infinite;
+        }
+        
+        @keyframes floatBubbles {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+        }
+        
+        .subject-icon {
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .subject-card-wrapper:hover .subject-icon {
+            transform: scale(1.2) rotate(10deg);
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        }
+        
+        .output-item {
+            border-left: 4px solid var(--purple-500);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .output-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--purple-100), transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .output-item:hover::before {
+            width: 100%;
+        }
+        
+        .output-item:hover {
+            border-left-color: var(--purple-700);
+            transform: translateX(8px);
+            background-color: var(--purple-50);
+        }
+        
+        /* Advanced Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(40px) scale(0.95);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple-600), var(--purple-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--purple-600), var(--purple-400));
+            border-radius: 2px;
+            animation: expandLine 1s ease-out forwards;
+        }
+        
+        @keyframes expandLine {
+            to { width: 60%; }
+        }
+        
+        /* Skills Section */
+        .skill-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        .skill-icon {
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: inline-block;
+        }
+        
+        .skill-card:hover .skill-icon {
+            transform: scale(1.3) rotate(360deg);
+            color: var(--primary);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .glow-on-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.6),
+                        0 0 40px rgba(168, 85, 247, 0.4),
+                        0 0 60px rgba(168, 85, 247, 0.2);
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+        
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+        
+        /* Social Icons */
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+        
+        .social-icon:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.15);
+            background: rgba(139, 92, 246, 0.2);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+        
+        .social-icon i {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Hero Section -->
+    <header class="hero-bg text-white py-24 px-4 relative">
+        <!-- Particles -->
+        <div class="particles" id="particles"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center">
+                <!-- Profile Picture -->
+                <div class="profile-container floating" style="opacity: 1;">
+                    <div class="profile-ring"></div>
+                    <img id="profileImage" 
+                         src="images/profile.jpg" 
+                         alt="Aldrich A. Alimpolos" 
+                         class="profile-image">
+                </div>
+                
+                <!-- Name & Title -->
+                <div class="fade-in-up stagger-2">
+                    <h1 class="text-6xl md:text-7xl font-bold mb-4 tracking-tight" 
+                        style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                        Aldrich A. Alimpolos
+                    </h1>
+                    <div class="inline-block glass px-6 py-3 rounded-full mb-4">
+                        <p class="text-xl md:text-2xl font-semibold">BSIT - 3D</p>
+                    </div>
+                    <p class="text-lg md:text-xl opacity-90 mb-2">Institute of Computing</p>
+                    
+                    <!-- Quick Stats -->
+                    <div class="flex justify-center gap-4 md:gap-6 mt-8 flex-wrap">
+                        <div class="glass px-6 py-4 md:px-10 md:py-6 rounded-3xl backdrop-blur-lg bg-white/10 border border-white/20">
+                            <div class="text-3xl md:text-5xl font-bold text-white mb-1 md:mb-2">6</div>
+                            <div class="text-sm md:text-base text-white/80">Subjects</div>
+                        </div>
+                        <div class="glass px-6 py-4 md:px-10 md:py-6 rounded-3xl backdrop-blur-lg bg-white/10 border border-white/20">
+                            <div class="text-3xl md:text-5xl font-bold text-white mb-1 md:mb-2">15+</div>
+                            <div class="text-sm md:text-base text-white/80">Projects</div>
+                        </div>
+                        <div class="glass px-6 py-4 md:px-10 md:py-6 rounded-3xl backdrop-blur-lg bg-white/10 border border-white/20">
+                            <div class="text-3xl md:text-5xl font-bold text-cyan-300 mb-1 md:mb-2">2026</div>
+                            <div class="text-sm md:text-base text-white/80">Academic Year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl opacity-50"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-20">
+        <!-- About Section -->
+        <section class="mb-24 fade-in-up">
+            <div class="glass-dark rounded-3xl p-10 md:p-12 border border-purple-500/20">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-1 h-12 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">About This Portfolio</h2>
+                </div>
+                <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+                    Welcome to my academic portfolio! This showcases my journey through the BSIT 3D program at the Institute of Computing. 
+                    Each section represents different subjects with comprehensive outputs, projects, and assignments that demonstrate 
+                    the technical skills and knowledge I've developed throughout the semester.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">Academic Excellence</span>
+                    <span class="px-4 py-2 bg-pink-500/20 text-pink-300 rounded-full text-sm border border-pink-500/30">Technical Skills</span>
+                    <span class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm border border-cyan-500/30">Innovation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subjects Section -->
+        <section id="subjects" class="mb-24">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">My Subjects</h2>
+                <p class="text-gray-400 text-lg md:text-xl">Explore my academic journey across different disciplines</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Subject 1: Cyber Security -->
+                <div class="subject-card-wrapper fade-in-up stagger-1">
+                    <a href="cyber-security.html" class="block">
+                        <div class="subject-card subject-card-bg rounded-2xl p-10 min-h-[280px] flex flex-col items-center justify-center relative">
+                            <div class="card-shine"></div>
+                            <i class="fas fa-shield-alt text-7xl mb-6 text-white subject-icon"></i>
+                            <h3 class="text-2xl font-bold text-center text-white mb-3 relative z-10">Cyber Security</h3>
+                            <p class="text-sm text-white/80 relative z-10">Explore outputs →</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Subject 2 & 5: HCI 1 + Technopreneurship -->
+                <div class="subject-card-wrapper fade-in-up stagger-2">
+                    <a href="hci-techno.html" class="block">
+                        <div class="subject-card subject-card-bg rounded-2xl p-10 min-h-[280px] flex flex-col items-center justify-center relative">
+                            <div class="card-shine"></div>
+                            <i class="fas fa-users text-7xl mb-6 text-white subject-icon"></i>
+                            <h3 class="text-xl font-bold text-center text-white leading-tight mb-2 relative z-10">Human Computer<br>Interaction 1</h3>
+                            <h3 class="text-xl font-bold text-center text-white leading-tight mb-3 relative z-10">Technopreneurship</h3>
+                            <p class="text-sm text-white/80 relative z-10">Explore outputs →</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Subject 3: Data Mining -->
+                <div class="subject-card-wrapper fade-in-up stagger-3">
+                    <a href="data-mining.html" class="block">
+                        <div class="subject-card subject-card-bg rounded-2xl p-10 min-h-[280px] flex flex-col items-center justify-center relative">
+                            <div class="card-shine"></div>
+                            <i class="fas fa-database text-7xl mb-6 text-white subject-icon"></i>
+                            <h3 class="text-2xl font-bold text-center text-white mb-3 relative z-10">Data Mining</h3>
+                            <p class="text-sm text-white/80 relative z-10">Explore outputs →</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Subject 4: Capstone 1 -->
+                <div class="subject-card-wrapper fade-in-up stagger-4">
+                    <a href="capstone.html" class="block">
+                        <div class="subject-card subject-card-bg rounded-2xl p-10 min-h-[280px] flex flex-col items-center justify-center relative">
+                            <div class="card-shine"></div>
+                            <i class="fas fa-project-diagram text-7xl mb-6 text-white subject-icon"></i>
+                            <h3 class="text-2xl font-bold text-center text-white mb-3 relative z-10">Capstone 1</h3>
+                            <p class="text-sm text-white/80 relative z-10">Explore outputs →</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Subject 5: Social and Professional Issues -->
+                <div class="subject-card-wrapper fade-in-up stagger-5">
+                    <a href="social-issues.html" class="block">
+                        <div class="subject-card subject-card-bg rounded-2xl p-10 min-h-[280px] flex flex-col items-center justify-center relative">
+                            <div class="card-shine"></div>
+                            <i class="fas fa-balance-scale text-7xl mb-6 text-white subject-icon"></i>
+                            <h3 class="text-2xl font-bold text-center text-white mb-3 relative z-10">Social and<br>Professional Issues</h3>
+                            <p class="text-sm text-white/80 relative z-10">Explore outputs →</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="mb-24">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">Technical Skills</h2>
+                <p class="text-gray-400 text-lg md:text-xl">Technologies and tools I work with</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="skill-card glass-dark rounded-2xl p-6 md:p-8 text-center fade-in-up stagger-1">
+                    <i class="fas fa-code text-5xl md:text-6xl text-purple-400 mb-4 md:mb-6 skill-icon"></i>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Web & Mobile Development</h3>
+                    <p class="text-sm md:text-base text-gray-300">React, Node.js, Express, React Native, JavaScript, HTML/CSS, Tailwind CSS</p>
+                </div>
+                
+                <div class="skill-card glass-dark rounded-2xl p-6 md:p-8 text-center fade-in-up stagger-2">
+                    <i class="fas fa-database text-5xl md:text-6xl text-pink-400 mb-4 md:mb-6 skill-icon"></i>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Database & Blockchain</h3>
+                    <p class="text-sm md:text-base text-gray-300">PostgreSQL, Firebase, Ethereum, Smart Contracts, Blockchain Integration</p>
+                </div>
+                
+                <div class="skill-card glass-dark rounded-2xl p-6 md:p-8 text-center fade-in-up stagger-3">
+                    <i class="fas fa-brain text-5xl md:text-6xl text-cyan-400 mb-4 md:mb-6 skill-icon"></i>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">AI & Security</h3>
+                    <p class="text-sm md:text-base text-gray-300">Machine Learning, TensorFlow, Data Mining, Network Security, Penetration Testing</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-6 md:mt-8">
+                <div class="skill-card glass-dark rounded-2xl p-6 md:p-8 text-center fade-in-up stagger-1">
+                    <i class="fas fa-palette text-5xl md:text-6xl text-yellow-400 mb-4 md:mb-6 skill-icon"></i>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Design & Multimedia</h3>
+                    <p class="text-sm md:text-base text-gray-300">Figma, Canva, Video Editing, Graphic Design, UI/UX Design</p>
+                </div>
+                
+                <div class="skill-card glass-dark rounded-2xl p-6 md:p-8 text-center fade-in-up stagger-2">
+                    <i class="fas fa-tools text-5xl md:text-6xl text-green-400 mb-4 md:mb-6 skill-icon"></i>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Development Tools</h3>
+                    <p class="text-sm md:text-base text-gray-300">Git, GitHub, VS Code, Android Studio, Hardhat, Truffle</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hero-bg text-white py-12 px-4 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Aldrich A. Alimpolos</h3>
+                    <p class="text-sm opacity-90 mb-2">BSIT 3D Student</p>
+                    <p class="text-sm opacity-90">Institute of Computing</p>
+                    <p class="text-sm opacity-90">Mindanao State University</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-home mr-2"></i>Home</a></li>
+                        <li><a href="cyber-security.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-shield-alt mr-2"></i>Cyber Security</a></li>
+                        <li><a href="hci-techno.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-laptop-code mr-2"></i>HCI & Techno</a></li>
+                        <li><a href="data-mining.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-database mr-2"></i>Data Mining</a></li>
+                        <li><a href="capstone.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-project-diagram mr-2"></i>Capstone</a></li>
+                        <li><a href="social-issues.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-balance-scale mr-2"></i>Social Issues</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/ALdrich06" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://web.facebook.com/profile.php?id=61588804875429" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aldricharanez/" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm opacity-80">&copy; 2026 Aldrich A. Alimpolos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll Progress Bar
+            const scrollProgress = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const progress = (scrollTop / scrollHeight) * 100;
+                scrollProgress.style.width = progress + '%';
+            });
+            
+            // Create Particles
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Intersection Observer for Animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in-up, .slide-in-left, .scale-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone 1 - Aldrich A. Alimpolos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --purple-50: #faf5ff;
+            --purple-100: #f3e8ff;
+            --purple-200: #e9d5ff;
+            --purple-300: #d8b4fe;
+            --purple-400: #c084fc;
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            --purple-700: #7e22ce;
+            --purple-800: #6b21a8;
+            --purple-900: #581c87;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .output-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid var(--purple-500);
+        }
+        
+        .output-card:hover {
+            transform: translateX(8px);
+            border-left-color: var(--purple-700);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+        
+        .back-button {
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <a href="index.html#subjects" class="back-button inline-flex items-center text-white mb-6 hover:text-purple-200 transition-all duration-300">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Subjects
+            </a>
+            <div class="text-center">
+                <i class="fas fa-project-diagram text-7xl mb-4"></i>
+                <h1 class="text-5xl font-bold mb-2">Capstone 1</h1>
+                <p class="text-xl opacity-90">All Outputs & Projects</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- CoopNexus Project Section -->
+        <section class="mb-12">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 mb-6 md:mb-8 pb-4 border-b-4 border-purple-300">
+                <i class="fas fa-users text-4xl md:text-5xl text-purple-600"></i>
+                <div>
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">COOPNEXUS: A WEB AND MOBILE-BASED COOPERATIVE MANAGEMENT SYSTEM WITH BLOCKCHAIN-INTEGRATED AUDIT TRAIL</h2>
+                    <p class="text-sm md:text-base text-gray-600 mt-1">Full-stack web and mobile application for cooperative management</p>
+                </div>
+            </div>
+            
+            <!-- Development Status Notice -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-lg">
+                <div class="flex items-start">
+                    <i class="fas fa-info-circle text-blue-600 text-2xl mr-3 mt-1"></i>
+                    <div>
+                        <h4 class="text-lg font-bold text-blue-800 mb-1">Development Status</h4>
+                        <p class="text-blue-700 text-sm">
+                            <strong>🚧 Still in Development</strong> - This project is currently under active development. 
+                            The system has not been deployed yet but features comprehensive functionality for cooperative management including 
+                            member management, loan processing, savings tracking, and blockchain-based voting system.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+            <!-- CoopNexus Main Card -->
+            <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">CoopNexus Capstone Project</h3>
+                        <span class="text-sm text-purple-600 font-medium">2nd Semester 2025-26</span>
+                    </div>
+                    <i class="fas fa-building text-4xl text-purple-500"></i>
+                </div>
+                <p class="text-gray-600 mb-4 text-sm">
+                    CoopNexus is a comprehensive cooperative management system designed to streamline operations for cooperatives. 
+                    The platform features member management, loan processing, savings tracking, and dividend distribution with 
+                    blockchain-integrated audit trail for transparent and immutable transaction recording. Built with modern technologies 
+                    including React, Node.js, Express, PostgreSQL, and Ethereum blockchain integration for secure audit logging.
+                </p>
+                
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Key Features:</h4>
+                    <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
+                        <li><strong>Member Management</strong> - Complete member registration, profile management, and membership tracking with blockchain audit trail</li>
+                        <li><strong>Loan System</strong> - Loan application, approval workflow, payment tracking, and interest calculation with immutable transaction records</li>
+                        <li><strong>Savings Management</strong> - Multiple savings types, deposit tracking, and withdrawal processing with blockchain verification</li>
+                        <li><strong>Dividend Distribution</strong> - Automated dividend calculation and distribution to members with transparent audit logging</li>
+                        <li><strong>Blockchain Audit Trail</strong> - Ethereum-based immutable logging of all critical transactions for transparency and accountability</li>
+                        <li><strong>Admin Dashboard</strong> - Comprehensive analytics, reports, and system management with audit trail visualization</li>
+                        <li><strong>Mobile App</strong> - React Native mobile application for members and cashiers with real-time transaction tracking</li>
+                        <li><strong>Multi-role Access</strong> - Different interfaces for Admin, Cashier, and Members with role-based permissions</li>
+                    </ul>
+                </div>
+                
+                <!-- Web Application Screenshots -->
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Web Application Screenshots</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <img src="images/capstone/web-1.png" alt="Web Screenshot 1" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-1.png', '_blank')">
+                        <img src="images/capstone/web-2.png" alt="Web Screenshot 2" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-2.png', '_blank')">
+                        <img src="images/capstone/web-3.png" alt="Web Screenshot 3" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-3.png', '_blank')">
+                        <img src="images/capstone/web-4.png" alt="Web Screenshot 4" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-4.png', '_blank')">
+                        <img src="images/capstone/web-5.png" alt="Web Screenshot 5" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-5.png', '_blank')">
+                        <img src="images/capstone/web-6.png" alt="Web Screenshot 6" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-6.png', '_blank')">
+                        <img src="images/capstone/web-7.png" alt="Web Screenshot 7" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-7.png', '_blank')">
+                        <img src="images/capstone/web-8.png" alt="Web Screenshot 8" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-8.png', '_blank')">
+                        <img src="images/capstone/web-9.png" alt="Web Screenshot 9" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-9.png', '_blank')">
+                        <img src="images/capstone/web-10.png" alt="Web Screenshot 10" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-10.png', '_blank')">
+                        <img src="images/capstone/web-11.png" alt="Web Screenshot 11" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-11.png', '_blank')">
+                        <img src="images/capstone/web-12.png" alt="Web Screenshot 12" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-12.png', '_blank')">
+                        <img src="images/capstone/web-13.png" alt="Web Screenshot 13" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-13.png', '_blank')">
+                        <img src="images/capstone/web-14.png" alt="Web Screenshot 14" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-14.png', '_blank')">
+                        <img src="images/capstone/web-15.png" alt="Web Screenshot 15" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-15.png', '_blank')">
+                        <img src="images/capstone/web-16.png" alt="Web Screenshot 16" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-16.png', '_blank')">
+                        <img src="images/capstone/web-17.png" alt="Web Screenshot 17" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-17.png', '_blank')">
+                        <img src="images/capstone/web-18.png" alt="Web Screenshot 18" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-18.png', '_blank')">
+                        <img src="images/capstone/web-19.png" alt="Web Screenshot 19" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-19.png', '_blank')">
+                        <img src="images/capstone/web-20.png" alt="Web Screenshot 20" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-20.png', '_blank')">
+                        <img src="images/capstone/web-21.png" alt="Web Screenshot 21" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-21.png', '_blank')">
+                        <img src="images/capstone/web-22.png" alt="Web Screenshot 22" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-22.png', '_blank')">
+                        <img src="images/capstone/web-23.png" alt="Web Screenshot 23" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-23.png', '_blank')">
+                        <img src="images/capstone/web-24.png" alt="Web Screenshot 24" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-24.png', '_blank')">
+                        <img src="images/capstone/web-25.png" alt="Web Screenshot 25" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-25.png', '_blank')">
+                        <img src="images/capstone/web-26.png" alt="Web Screenshot 26" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-26.png', '_blank')">
+                        <img src="images/capstone/web-27.png" alt="Web Screenshot 27" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-27.png', '_blank')">
+                        <img src="images/capstone/web-28.png" alt="Web Screenshot 28" class="w-full h-32 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/web-28.png', '_blank')">
+                    </div>
+                </div>
+                
+                <!-- Mobile Application Screenshots -->
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Mobile Application Screenshots</h4>
+                    <div class="grid grid-cols-3 md:grid-cols-5 gap-3">
+                        <img src="images/capstone/mobile-1.jpg" alt="Mobile Screenshot 1" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-1.jpg', '_blank')">
+                        <img src="images/capstone/mobile-2.jpg" alt="Mobile Screenshot 2" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-2.jpg', '_blank')">
+                        <img src="images/capstone/mobile-3.jpg" alt="Mobile Screenshot 3" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-3.jpg', '_blank')">
+                        <img src="images/capstone/mobile-4.jpg" alt="Mobile Screenshot 4" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-4.jpg', '_blank')">
+                        <img src="images/capstone/mobile-5.jpg" alt="Mobile Screenshot 5" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-5.jpg', '_blank')">
+                        <img src="images/capstone/mobile-6.jpg" alt="Mobile Screenshot 6" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-6.jpg', '_blank')">
+                        <img src="images/capstone/mobile-7.jpg" alt="Mobile Screenshot 7" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-7.jpg', '_blank')">
+                        <img src="images/capstone/mobile-8.jpg" alt="Mobile Screenshot 8" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-8.jpg', '_blank')">
+                        <img src="images/capstone/mobile-9.jpg" alt="Mobile Screenshot 9" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-9.jpg', '_blank')">
+                        <img src="images/capstone/mobile-10.jpg" alt="Mobile Screenshot 10" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-10.jpg', '_blank')">
+                        <img src="images/capstone/mobile-11.jpg" alt="Mobile Screenshot 11" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-11.jpg', '_blank')">
+                        <img src="images/capstone/mobile-12.jpg" alt="Mobile Screenshot 12" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-12.jpg', '_blank')">
+                        <img src="images/capstone/mobile-13.jpg" alt="Mobile Screenshot 13" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-13.jpg', '_blank')">
+                        <img src="images/capstone/mobile-14.jpg" alt="Mobile Screenshot 14" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-14.jpg', '_blank')">
+                        <img src="images/capstone/mobile-15.jpg" alt="Mobile Screenshot 15" class="w-full h-48 object-cover rounded-lg border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" onclick="window.open('images/capstone/mobile-15.jpg', '_blank')">
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">React</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Node.js</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Express</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">PostgreSQL</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">React Native</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Blockchain</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Ethereum</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Full-Stack</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://docs.google.com/document/d/1NAuu1sJMbjOKNubdyzv6qir2b0sN9Kp3/edit?usp=drive_link&ouid=111397211089359563397&rtpof=true&sd=true" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-lg transition-all hover:scale-105">
+                        <i class="fab fa-google-drive mr-2"></i>
+                        View Documentation
+                    </a>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12 px-4 mt-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Aldrich A. Alimpolos</h3>
+                    <p class="text-sm opacity-90 mb-2">BSIT 3D Student</p>
+                    <p class="text-sm opacity-90">Institute of Computing</p>
+                    <p class="text-sm opacity-90">Mindanao State University</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-home mr-2"></i>Home</a></li>
+                        <li><a href="cyber-security.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-shield-alt mr-2"></i>Cyber Security</a></li>
+                        <li><a href="hci-techno.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-laptop-code mr-2"></i>HCI & Techno</a></li>
+                        <li><a href="data-mining.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-database mr-2"></i>Data Mining</a></li>
+                        <li><a href="social-issues.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-balance-scale mr-2"></i>Social Issues</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/ALdrich06" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://web.facebook.com/profile.php?id=61588804875429" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aldricharanez/" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm opacity-80">&copy; 2026 Aldrich A. Alimpolos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

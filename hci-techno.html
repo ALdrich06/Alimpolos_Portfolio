@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCI & Technopreneurship - Aldrich A. Alimpolos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --purple-50: #faf5ff;
+            --purple-100: #f3e8ff;
+            --purple-200: #e9d5ff;
+            --purple-300: #d8b4fe;
+            --purple-400: #c084fc;
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            --purple-700: #7e22ce;
+            --purple-800: #6b21a8;
+            --purple-900: #581c87;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .output-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid var(--purple-500);
+        }
+        
+        .output-card:hover {
+            transform: translateX(8px);
+            border-left-color: var(--purple-700);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+        
+        .back-button {
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+        
+        /* Flip Card Styles */
+        .flip-card {
+            perspective: 1000px;
+            height: 600px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-button {
+            transition: all 0.3s ease;
+        }
+        
+        .flip-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <a href="index.html#subjects" class="back-button inline-flex items-center text-white mb-6 hover:text-purple-200 transition-all duration-300">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Subjects
+            </a>
+            <div class="text-center">
+                <i class="fas fa-laptop-code text-7xl mb-4"></i>
+                <h1 class="text-5xl font-bold mb-2">HCI 1 & Technopreneurship</h1>
+                <p class="text-xl opacity-90">All Outputs & Projects</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Marketing Materials Section -->
+        <section class="mb-12">
+            <div class="flex items-center gap-4 mb-8 pb-4 border-b-4 border-purple-300">
+                <i class="fas fa-palette text-5xl text-purple-600"></i>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800">Marketing & Design</h2>
+                    <p class="text-gray-600 mt-1">Brochures, posters, and promotional materials</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Project Brochure -->
+            <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">HCI</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">TECHNOPRENEURSHIP</span>
+                            <h3 class="text-2xl font-bold text-gray-800">PlayMate Chess App Brochure</h3>
+                        </div>
+                        <span class="text-sm text-purple-600 font-medium">2nd Semester 2025-26</span>
+                    </div>
+                    <i class="fas fa-chess text-4xl text-purple-500"></i>
+                </div>
+                <p class="text-gray-600 mb-3 text-sm">
+                    Marketing brochure with features, testimonials, team profiles, and pricing plans. Click to flip!
+                </p>
+                
+                <!-- Flip Card -->
+                <div class="flip-card mb-3" id="brochure-flip-card" style="height: 400px;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/hci-brochure.png" alt="Brochure Front - Features & Benefits" 
+                                 class="w-full h-full object-contain border-2 border-purple-200 rounded-lg bg-white">
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="images/techno-brochure.png" alt="Brochure Back - Team & Details" 
+                                 class="w-full h-full object-contain border-2 border-purple-200 rounded-lg bg-white">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Brochure Design</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">UI/UX</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Business Model</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Chess App</span>
+                    </div>
+                    <button onclick="flipCard('brochure-flip-card')" class="flip-button inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 shadow-lg">
+                        <i class="fas fa-sync-alt mr-2"></i>
+                        <span id="flip-text">Flip to View Back</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Poster Design -->
+            <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">HCI</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">TECHNOPRENEURSHIP</span>
+                            <h3 class="text-2xl font-bold text-gray-800">PlayMate Promotional Poster</h3>
+                        </div>
+                        <span class="text-sm text-purple-600 font-medium">2nd Semester 2025-26</span>
+                    </div>
+                    <i class="fas fa-image text-4xl text-purple-500"></i>
+                </div>
+                <p class="text-gray-600 mb-3 text-sm">
+                    Promotional poster for marketing campaigns and social media. Click to view full size.
+                </p>
+                
+                <!-- Poster Image -->
+                <div class="mb-3 rounded-lg overflow-hidden border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer" style="height: 400px;"
+                     onclick="window.open('images/playmate-poster.png', '_blank')">
+                    <img src="images/playmate-poster.png" alt="PlayMate Promotional Poster" 
+                         class="w-full object-contain bg-white">
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Graphic Design</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Poster Design</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Marketing Material</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Brand Identity</span>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Digital Media Section -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-8 pb-4 border-b-4 border-purple-300">
+                <i class="fas fa-video text-5xl text-purple-600"></i>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800">Digital Media & Content</h2>
+                    <p class="text-gray-600 mt-1">Websites, videos, and multimedia presentations</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Promotional Website -->
+            <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">HCI</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">TECHNOPRENEURSHIP</span>
+                            <h3 class="text-2xl font-bold text-gray-800">Promotional Website</h3>
+                        </div>
+                        <span class="text-sm text-purple-600 font-medium">2nd Semester 2025-26</span>
+                    </div>
+                    <i class="fas fa-globe text-4xl text-purple-500"></i>
+                </div>
+                <p class="text-gray-600 mb-3 text-sm">
+                    Full promotional website deployed on Netlify with modern design and animations.
+                </p>
+                
+                <!-- Video Demo -->
+                <div class="mb-3 rounded-lg overflow-hidden border-2 border-purple-200 aspect-video">
+                    <video loop controls class="w-full h-full object-cover" poster="">
+                        <source src="videos/playmate-promo-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Web Development</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Responsive Design</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Animations</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Promo Site</span>
+                    </div>
+                    <a href="https://playmate-promo.netlify.app/" target="_blank" class="flip-button inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg hover:from-green-700 hover:to-teal-700 shadow-lg">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        Visit Live Website
+                    </a>
+                </div>
+            </div>
+
+            <!-- Promotional Video -->
+            <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">HCI</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">TECHNOPRENEURSHIP</span>
+                            <h3 class="text-2xl font-bold text-gray-800">Promotional Video</h3>
+                        </div>
+                        <span class="text-sm text-purple-600 font-medium">2nd Semester 2025-26</span>
+                    </div>
+                    <i class="fas fa-video text-4xl text-purple-500"></i>
+                </div>
+                <p class="text-gray-600 mb-3 text-sm">
+                    Professional promotional video for marketing and investor presentations.
+                </p>
+                
+                <!-- Video Player -->
+                <div class="mb-3 rounded-lg overflow-hidden border-2 border-purple-200 bg-black aspect-video">
+                    <video loop controls class="w-full h-full object-cover" poster="">
+                        <source src="videos/playmate-promo-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Video Production</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Marketing</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Promotional Content</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Pitch Video</span>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Live Application Section -->
+        <section class="mb-12">
+            <div class="flex items-center gap-4 mb-8 pb-4 border-b-4 border-purple-300">
+                <i class="fas fa-rocket text-5xl text-purple-600"></i>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800">Live Application</h2>
+                    <p class="text-gray-600 mt-1">Deployed and functional chess learning platform</p>
+                </div>
+            </div>
+            <div class="space-y-6">
+            <!-- PlayMate Chess App -->
+            <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">HCI</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">TECHNOPRENEURSHIP</span>
+                            <h3 class="text-2xl font-bold text-gray-800">PlayMate Chess App (Live Application)</h3>
+                        </div>
+                        <span class="text-sm text-purple-600 font-medium">2nd Semester 2025-26</span>
+                    </div>
+                    <i class="fas fa-chess-knight text-4xl text-purple-500"></i>
+                </div>
+                <p class="text-gray-600 mb-3 text-sm">
+                    Fully functional chess learning platform with live matches, puzzles, tournaments, and AI analysis. Free & PRO plans available.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Full-Stack Development</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Chess Engine</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Live App</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">React</span>
+                    </div>
+                    <a href="https://playmate-chess.netlify.app/" target="_blank" class="flip-button inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:scale-105 transition-all">
+                        <i class="fas fa-play-circle mr-3 text-xl"></i>
+                        <div class="text-left">
+                            <div class="font-bold text-lg">Launch Chess App</div>
+                            <div class="text-xs opacity-80">Play Now on Netlify</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Documentation & Presentation Section -->
+        <section class="mb-12">
+            <div class="flex items-center gap-4 mb-8 pb-4 border-b-4 border-purple-300">
+                <i class="fas fa-users text-5xl text-purple-600"></i>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800">Documentation & Presentation</h2>
+                    <p class="text-gray-600 mt-1">Project defense and team collaboration</p>
+                </div>
+            </div>
+            <div class="space-y-6">
+            <!-- Project Presentation/Checking -->
+            <div class="bg-white rounded-xl shadow-lg p-6 output-card">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">HCI</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">TECHNOPRENEURSHIP</span>
+                            <h3 class="text-2xl font-bold text-gray-800">Project Presentation & Checking</h3>
+                        </div>
+                        <span class="text-sm text-purple-600 font-medium">2nd Semester 2025-26</span>
+                    </div>
+                    <i class="fas fa-users-cog text-4xl text-purple-500"></i>
+                </div>
+                <p class="text-gray-600 mb-3 text-sm">
+                    Project presentation session demonstrating the PlayMate Chess App to instructors with feedback on technical and business aspects.
+                </p>
+                
+                <!-- Photo Gallery -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                    <div class="rounded-lg overflow-hidden border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer"
+                         onclick="window.open('images/playmate-check1.jpg', '_blank')">
+                        <img src="images/playmate-check1.jpg" alt="Project Checking Session 1" 
+                             class="w-full h-64 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden border-2 border-purple-200 hover:border-purple-500 transition-all cursor-pointer"
+                         onclick="window.open('images/playmate-check2.jpg', '_blank')">
+                        <img src="images/playmate-check2.jpg" alt="Project Checking Session 2" 
+                             class="w-full h-64 object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Project Presentation</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Team Collaboration</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Project Defense</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Documentation</span>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12 px-4 mt-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Aldrich A. Alimpolos</h3>
+                    <p class="text-sm opacity-90 mb-2">BSIT 3D Student</p>
+                    <p class="text-sm opacity-90">Institute of Computing</p>
+                    <p class="text-sm opacity-90">Mindanao State University</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-home mr-2"></i>Home</a></li>
+                        <li><a href="cyber-security.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-shield-alt mr-2"></i>Cyber Security</a></li>
+                        <li><a href="data-mining.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-database mr-2"></i>Data Mining</a></li>
+                        <li><a href="capstone.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-project-diagram mr-2"></i>Capstone</a></li>
+                        <li><a href="social-issues.html" class="opacity-90 hover:opacity-100 transition-all hover:translate-x-1"><i class="fas fa-balance-scale mr-2"></i>Social Issues</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/ALdrich06" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://web.facebook.com/profile.php?id=61588804875429" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aldricharanez/" target="_blank" class="text-3xl opacity-90 hover:opacity-100 hover:scale-110 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm opacity-80">&copy; 2026 Aldrich A. Alimpolos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let isFlipped = false;
+        
+        function flipCard(cardId) {
+            const card = document.getElementById(cardId);
+            const flipText = document.getElementById('flip-text');
+            
+            card.classList.toggle('flipped');
+            isFlipped = !isFlipped;
+            
+            // Update button text
+            if (isFlipped) {
+                flipText.textContent = 'Flip to View Front';
+            } else {
+                flipText.textContent = 'Flip to View Back';
+            }
+        }
+
+        // Intersection Observer for auto-play videos when in viewport
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('video');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Play when 50% of video is visible
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    
+                    if (entry.isIntersecting) {
+                        // Video is in viewport, play it
+                        video.play().catch(err => {
+                            console.log('Autoplay prevented:', err);
+                        });
+                    } else {
+                        // Video is out of viewport, pause it
+                        video.pause();
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all videos
+            videos.forEach(video => {
+                observer.observe(video);
+            });
+        });
+    </script>
+</body>
+</html>
