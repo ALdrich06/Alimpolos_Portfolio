@@ -1,0 +1,17 @@
+# render.yaml - One-click deployment config for Render.com (free tier)
+# Docs: https://render.com/docs/render-yaml-spec
+
+services:
+  - type: web
+    name: secure-auth-system
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: PEPPER
+        generateValue: true   # Render auto-generates a secure random value
